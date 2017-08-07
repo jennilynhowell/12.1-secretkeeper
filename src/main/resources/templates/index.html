@@ -4,19 +4,19 @@
     <meta charset="UTF-8"/>
     <title>Secret Keeper</title>
 </head>
-<name>
+<body>
 
     <h1>What are your secrets??</h1>
     <form th:action="@{/createSecret}" method="post" th:object="${newSecret}">
-        <textarea rows="5" cols="80" type="text" th:field="*{name}" placeholder="Your secret here"></textarea>
+        <textarea rows="5" cols="80" type="text" th:field="*{body}" placeholder="Your secret here"></textarea>
         <input type="submit" value="Add Secret"/>
     </form>
 
     <div>
         <ul>
-            <li th:each="secret : ${secrets}" th:text="${secret.name}"></li>
+            <li th:each="secret : ${secrets}" th:text="${secret.body}"></li>
         </ul>
     </div>
 
-</name>
+</body>
 </html>
