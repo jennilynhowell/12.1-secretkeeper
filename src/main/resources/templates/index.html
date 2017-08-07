@@ -7,6 +7,11 @@
 <body>
 
     <h1>What are your secrets??</h1>
+
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Log Out"/>
+    </form>
+
     <form th:action="@{/createSecret}" method="post" th:object="${newSecret}">
         <textarea rows="5" cols="80" type="text" th:field="*{body}" placeholder="Your secret here"></textarea>
         <input type="submit" value="Add Secret"/>

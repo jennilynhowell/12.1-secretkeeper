@@ -23,6 +23,9 @@ public class User implements UserDetails {
     @JoinColumn(name = "role_id")
     private Role role;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Secret> secrets;
+
     public long getId() {
         return id;
     }
