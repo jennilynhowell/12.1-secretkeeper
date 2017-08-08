@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Login</title>
+    <span th:include="includes :: materialize"></span>
 </head>
-<body>
+<body class="container">
+
+    <nav class="blue darken-4" th:include="includes :: navbar"></nav>
 
     <h1>Please Log In</h1>
     <div th:text="${error}"></div>
-    <div>
+    <div class="container">
         <form th:action="@{/login}" method="post" th:object="${user}">
             <input type="text" th:field="*{username}" placeholder="Username"/>
             <input type="password" th:field="*{password}" placeholder="Password"/>
-            <input type="submit" value="Log In"/>
+            <input class="waves-effect waves-light btn" type="submit" value="Log In"/>
         </form>
     </div>
 
+    <span th:include="includes :: js"></span>
 </body>
 </html>

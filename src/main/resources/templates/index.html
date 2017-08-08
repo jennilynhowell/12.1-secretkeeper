@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Secret Keeper</title>
+    <span th:include="includes :: materialize"></span>
 </head>
 <body>
 
-    <h1>What are your secrets??</h1>
+    <div th:include="includes :: navbar"></div>
 
-    <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Log Out"/>
-    </form>
+    <div class="container">
 
-    <form th:action="@{/createSecret}" method="post" th:object="${newSecret}">
-        <textarea rows="5" cols="80" type="text" th:field="*{body}" placeholder="Your secret here"></textarea>
-        <input type="submit" value="Add Secret"/>
-    </form>
+        <h1>Secrets</h1>
 
-    <div>
-        <ul>
-            <li th:each="secret : ${secrets}" th:text="${secret.body}"></li>
-        </ul>
+        <div class="row">
+            <div class="col s12 m4">
+                <div class="card-panel blue lighten-1" th:each="secret : ${secrets}">
+                    <span class="white-text" th:text="${secret.body}"></span>
+                </div>
+            </div>
+        </div>
+
     </div>
 
+
+
+    <span th:include="includes :: js"></span>
 </body>
 </html>

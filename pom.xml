@@ -53,6 +53,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>materialize</artifactId>
+            <version>0.98.2</version>
+        </dependency>
 	</dependencies>
 
 	<build>

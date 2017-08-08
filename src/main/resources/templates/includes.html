@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <span th:fragment="materialize">
+        <link rel="stylesheet" th:href="@{/webjars/materialize/0.98.2/dist/css/materialize.min.css}"/>
+    </span>
+</head>
+<body>
+    <div th:fragment="navbar">
+        <nav class="blue darken-4">
+            <div class="container nav-wrapper">
+                <a th:href="@{/}" class="brand-logo">Secrets</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a th:href="@{/secret/createSecret}">Create Secret</a></li>
+                    <li><a th:href="@{/secret/mySecrets}">My Secrets</a></li>
+                    <li><form th:action="@{/logout}" method="post"><input class="btn-flat white-text" type="submit" value="Log Out"/></form></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+
+    <span th:fragment="js">
+        <script type="text/javascript" th:src="@{/webjars/jquery.3.2.1/dist/jquery.min.js}"></script>
+        <script type="text/javascript" th:src="@{/webjars/materialize/0.98.2/dist/js/materialize.min.js}"></script>
+    </span>
+</body>
+</html>
