@@ -18,6 +18,7 @@ public class User implements UserDetails {
     private long id;
     private String username;
     private String password;
+    private boolean active;
 
     @OneToOne
     @JoinColumn(name = "role_id")
@@ -84,5 +85,13 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }
